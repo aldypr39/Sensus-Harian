@@ -1,0 +1,125 @@
+/* 12. GAYA HALAMAN LOGIN */
+.login-page-body {
+    /* Menggunakan variabel gradasi dari tema terang sebagai default */
+    background-image: var(--body-bg, linear-gradient(to right top, #d1e4f6, #d8e5f7, #e0e5f7, #e7e5f6, #ece4f5, #f1e3f5, #f5e2f4, #f9e1f3, #fddff0, #ffdeea, #ffdee4, #ffdedf));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dark-theme.login-page-body {
+    /* Menggunakan variabel gradasi dari tema gelap */
+    background-image: var(--body-bg, linear-gradient(to right top, #141e30, #1b283e, #21324c, #273c5b, #2d466b));
+}
+
+.login-container {
+    padding: 20px;
+}
+
+.login-box {
+    width: 380px;
+    padding: 40px;
+    text-align: center;
+}
+
+.login-header {
+    margin-bottom: 30px;
+}
+
+.login-header .fa-hospital-user {
+    font-size: 48px;
+    color: var(--primary-action-bg);
+    margin-bottom: 10px;
+}
+
+.login-header h1 {
+    color: var(--header-title-color);
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    margin: 4px 0 0 0;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group .fas {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 14px 14px 45px; /* Beri ruang untuk ikon di kiri */
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.dark-theme .input-group input {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-action-bg);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: var(--primary-action-bg);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-action-bg);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+    filter: brightness(1.1);
+    box-shadow: var(--primary-action-shadow);
+}

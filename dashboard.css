@@ -1,0 +1,856 @@
+/* 3. HEADER PANEL */
+.dashboard-header {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 20px 24px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 10px 24px 0 rgba(0, 0, 0, 0.08);
+}
+
+.header-info h1 {
+    color: var(--header-title-color);
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.header-info p {
+    color: var(--text-muted);
+    margin: 4px 0 0 0;
+    font-size: 15px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-action-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    background-color: var(--primary-action-bg);
+    color: white;
+    box-shadow: var(--primary-action-shadow);
+}
+
+.header-action-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.header-icon-btn {
+    background: transparent;
+    border: none;
+    color: #e67e22;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.header-icon-btn:hover {
+    background-color: rgba(0,0,0,0.1);
+    color: var(--text-color);
+}
+
+.dark-theme .header-icon-btn:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logout-btn {
+    background: var(--logout-bg, transparent);
+    border: 1px solid var(--logout-border, var(--border-color));
+    color: var(--text-muted);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    padding-right: 16px;
+    border-right: 1px solid var(--border-color);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2);
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #34495e;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+.dark-theme .header-icon-btn:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* GAYA UNTUK TOMBOL IKON DI HEADER */
+.header-icon-btn {
+    background: transparent;
+    border: none;
+    color: #e67e22; /* Warna jingga */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px; /* Sedikit lebih besar agar terlihat */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.header-icon-btn:hover {
+    background-color: rgba(0,0,0,0.1);
+    color: var(--text-color);
+}
+
+
+
+
+/* 4. NAVBAR */
+.main-nav {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 32px;
+    box-shadow: var(--glass-shadow);
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: rgba(0,0,0,0.1);
+    color: var(--text-color);
+}
+
+.dark-theme .main-nav a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.main-nav a.active {
+    background-color: var(--primary-action-bg);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* 5. KARTU STATISTIK DASHBOARD */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+.card-content h3 {
+    color: var(--text-muted);
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.card-content .card-value {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* 6. TABEL PASIEN DI DALAM TAB */
+/* -- KODE BARU -- */
+/* --- Kontainer Utama untuk Setiap Tabel --- */
+.patient-table-section {
+    margin-top: 32px;
+    background: var(--glass-bg); /* Memberi latar belakang seperti kartu */
+    border: 1px solid var(--glass-border);
+    border-radius: 16px; /* Sudut membulat untuk kartu */
+    padding: 24px;
+    box-shadow: var(--glass-shadow);
+}
+
+/* --- Header Tabel (Judul & Pencarian) --- */
+
+
+.patient-table-section .section-header h2 {
+    margin: 0; 
+    color: var(--header-title-color);
+}
+
+.table-container {
+    overflow-x: auto; /* Tetap ada untuk responsivitas */
+}
+
+/* --- Aturan untuk Tabel Utama --- */
+table {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 0;
+    color: var(--table-text);
+    background: var(--table-surface);
+    border-radius: 16px; /* Dibuat sedikit lebih membulat */
+    border: 1px solid var(--glass-border);
+
+    /* Bayangan dibuat lebih kuat untuk efek 'melayang' yang jelas */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+
+    /* Transisi untuk animasi halus saat hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Efek saat mouse berada di atas tabel */
+table:hover {
+    /* Tabel akan sedikit terangkat ke atas */
+    transform: translateY(-6px);
+
+    /* Bayangan akan menjadi lebih besar dan lebih gelap, memberikan ilusi terangkat */
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* --- Header Tabel (Nama Kolom) --- */
+thead th {
+    background-color: transparent; /* Hapus latar belakang abu-abu */
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 12px; /* Sedikit lebih kecil */
+    text-transform: uppercase; /* Huruf besar semua */
+    letter-spacing: 0.5px; /* Jarak antar huruf */
+    text-align: left;
+    padding: 12px 20px;
+    border-bottom: 2px solid var(--border-color); /* Garis bawah yang lebih tebal */
+    /* Tambahan untuk efek 3D */
+    background-color: rgba(0, 0, 0, 0.02); /* Latar belakang yang sangat subtil */
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); /* Memberi sedikit efek timbul pada teks */
+}
+/* Memberi sudut membulat pada header tabel */
+thead tr:first-child th:first-child {
+    border-top-left-radius: 16px;
+}
+thead tr:first-child th:last-child {
+    border-top-right-radius: 16px;
+}
+
+
+/* --- Baris Tabel (tbody) --- */
+tbody tr {
+    transition: background-color 0.2s ease; /* Transisi hover lebih halus */
+}
+
+tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+/* --- Sel Tabel (td) --- */
+td {
+    padding: 16px 20px;
+    text-align: left;
+    vertical-align: middle; /* Selalu di tengah secara vertikal */
+    border-bottom: 1px solid var(--border-color); /* Garis pemisah antar baris */
+}
+
+/* --- Menghapus border di baris terakhir agar rapi --- */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Tag Nomor Tempat Tidur --- */
+.bed-tag {
+    background-color: var(--card-icon-bg-1); /* Menggunakan warna yang konsisten */
+    color: var(--card-icon-color-1);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* --- Sel untuk Tombol Aksi --- */
+.actions-cell {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-action-icon {
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+.dark-theme .btn-action-icon {
+    border-color: var(--glass-border);
+}
+.btn-action-icon.edit:hover {
+    background-color: #ffc107;
+    color: #212529;
+    border-color: #ffc107;
+}
+.btn-action-icon.delete:hover {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+.btn-action-primary {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--primary-action-bg);
+    color: white;
+}
+.btn-action-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+/* 8. HALAMAN REKAP & INDIKATOR */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 32px;
+    align-items: center;
+}
+.filters .form-group {
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+.recap-table-section {
+    margin-top: 32px;
+}
+.recap-table-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.recap-table-section h2 {
+    margin-bottom: 0;
+    color: var(--header-title-color);
+}
+.table-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 6px;
+    border-radius: 8px;
+}
+.table-controls span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-right: 8px;
+    margin-left: 4px;
+}
+.table-controls button {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+.table-controls button:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+.dark-theme .table-controls button:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+.table-controls button#zoom-reset-btn {
+    font-weight: 600;
+    width: auto;
+    padding: 0 10px;
+}
+.table-wrapper {
+    overflow-x: auto;
+    padding: 8px;
+}
+.table-wrapper table {
+    width: 100%;
+    min-width: 2000px;
+    border-collapse: collapse;
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+}
+.table-wrapper th,
+.table-wrapper td {
+    text-align: center;
+    padding: 12px 8px;
+    white-space: nowrap;
+    border-right: 1px solid #dee2e6;
+}
+.table-wrapper th:last-child,
+.table-wrapper td:last-child {
+    border-right: none;
+}
+.table-wrapper .sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: var(--table-surface);
+    border-right: 2px solid #ced4da;
+}
+.table-wrapper tbody tr:hover .sticky-col {
+    background-color: var(--table-hover);
+}
+.indicator-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+.indicator-card {
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-left: 6px solid;
+}
+.indicator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px 0 rgba(0,0,0,0.1);
+}
+.indicator-card.bor {
+    border-left-color: #3498db;
+}
+.indicator-card.avlos {
+    border-left-color: #9b59b6;
+}
+.indicator-card.bto {
+    border-left-color: #2ecc71;
+}
+.indicator-card.toi {
+    border-left-color: #f1c40f;
+}
+.indicator-card.gdr {
+    border-left-color: #e74c3c;
+}
+.indicator-card.ndr {
+    border-left-color: #e67e22;
+}
+.indicator-card h3 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+.indicator-card .indicator-value {
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0 0 8px 0;
+}
+.indicator-card .indicator-value .unit {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-left: 8px;
+}
+.indicator-card .ideal-value {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-color);
+}
+
+/* 9. GAYA TAB */
+.tab-container {
+    margin-top: 32px;
+}
+.tab-nav {
+    display: flex;
+    border-bottom: 1px solid var(--glass-border);
+}
+.tab-link {
+    padding: 12px 24px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 3px solid transparent;
+}
+.tab-link:hover {
+    color: var(--text-color);
+}
+.tab-link.active {
+    color: var(--primary-action-bg);
+    font-weight: 600;
+    border-bottom-color: var(--primary-action-bg);
+}
+.tab-content {
+    display: none;
+    padding-top: 24px;
+}
+.tab-content.active {
+    display: block;
+    animation: fadeInAnimation 0.5s;
+}
+.tab-content .patient-table-section {
+    margin-top: 0;
+}
+.tab-content .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.tab-content .section-header h2 {
+    margin: 0;
+}
+.tab-content .table-container {
+    background-color: var(--table-surface) !important;
+}
+
+/* 10. GAYA KARTU RINGKASAN REKAP (MINI CARDS) */
+.mini-card-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+.mini-card {
+    padding: 20px;
+}
+.mini-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--glass-border);
+}
+.mini-card-header i {
+    font-size: 18px;
+    color: var(--primary-action-bg);
+}
+.mini-card-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--header-title-color);
+}
+.mini-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 4px;
+    font-size: 15px;
+}
+.summary-item + .summary-item {
+    border-top: 1px solid var(--glass-border);
+}
+.summary-item .label {
+    color: var(--text-muted);
+}
+.summary-item .value {
+    font-weight: 700;
+    color: var(--text-color);
+}
+.summary-item.total {
+    font-weight: 700;
+    margin-top: 8px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 6px;
+    padding: 10px;
+}
+.dark-theme .summary-item.total {
+    background-color: rgba(255,255,255,0.05);
+}
+.summary-item.total .label, .summary-item.total .value {
+    color: var(--header-title-color);
+    font-size: 16px;
+}
+
+
+/* 13. SEARCH & FILTER SECTION */
+.search-filter-section {
+    margin-bottom: 24px;
+}
+
+.search-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+    padding: 20px;
+    background: var(--glass-bg);
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    margin-bottom: 16px;
+}
+
+/* 14. GAYA UNTUK PENCARIAN DI ATAS TABEL */
+.patient-table-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Memastikan responsif */
+    gap: 16px; /* Memberi jarak antar elemen */
+    margin-bottom: 16px;
+}
+
+.patient-table-section .section-header h2 {
+    margin: 0; /* Hapus margin default dari h2 */
+}
+
+.table-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+    max-width: 320px; 
+}
+
+.table-search-wrapper .fa-search {
+    position: absolute;
+    left: 14px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.dark-theme .table-search-wrapper input {
+     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.table-search-wrapper input::placeholder {
+    color: var(--text-muted);
+}
+
+.table-search-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary-action-bg);
+    background-color: transparent;
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+
+.tab-filter label {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+.tab-filter input[type="date"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--glass-bg);
+    color: var(--text-color);
+}
+
+
+/* GAYA BARU UNTUK HEADER TABEL YANG LEBIH KOMPLEKS */
+.patient-table-section .section-header {
+    display: flex;
+    justify-content: space-between; /* Judul di kiri, kontrol di kanan */
+    align-items: center;
+    flex-wrap: wrap; /* Kontrol akan turun ke bawah jika layar sempit */
+    gap: 20px;
+}
+
+.patient-table-section .section-header h2 {
+    margin: 0;
+    flex-shrink: 0; /* Mencegah judul ikut menyusut */
+}
+
+/* Grup baru untuk semua kontrol */
+.header-controls-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Kontrol juga bisa turun ke bawah */
+    gap: 20px;
+    justify-content: flex-end; /* Ratakan ke kanan */
+}
+
+/* Aturan untuk pembungkus pencarian */
+.table-search-wrapper {
+    position: relative;
+    min-width: 250px; /* Lebar minimum untuk kolom pencarian */
+}
+
+.table-search-wrapper .fa-search {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.table-search-wrapper input {
+    width: 100%;
+    padding: 10px 14px 10px 40px; 
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--glass-bg);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+/* Aturan untuk filter tanggal */
+.tab-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0; /* Mencegah filter menyusut terlalu banyak */
+}
+
+.tab-filter label {
+    font-weight: 500;
+    color: var(--text-muted);
+    white-space: nowrap; /* Mencegah teks "sampai tgl:" turun baris */
+}
+
+.tab-filter input[type="date"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--glass-bg);
+    color: var(--text-color);
+}

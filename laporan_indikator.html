@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Laporan Indikator - Ruang Mawar</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-info"><h1>Laporan Indikator Kinerja</h1><p>Grafik Pelayanan Rawat Inap</p></div>
+            <div class="header-controls">
+                <a href="admin_akun.html" class="header-icon-btn" title="Panel Admin"><i class="fas fa-cogs"></i></a>
+                <div class="theme-switcher"><i class="fas fa-sun"></i><label class="switch"><input type="checkbox" id="theme-toggle"><span class="slider round"></span></label><i class="fas fa-moon"></i></div>
+                <div class="user-profile"><span>Perawat Ana</span><button class="logout-btn" title="Logout"><i class="fas fa-sign-out-alt"></i></button></div>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="rekapitulasi.html"><i class="fas fa-file-alt"></i> Rekapitulasi</a></li>
+                <li><a href="laporan_indikator.html" class="active"><i class="fas fa-chart-pie"></i> Laporan Indikator</a></li>
+            </ul>
+        </nav>
+
+        <main class="dashboard-content">
+            <section class="filters glass-effect"><div class="form-group"><label for="filter-ruangan">Ruangan</label><select id="filter-ruangan"><option>Ruang Mawar</option><option>Ruang Melati</option></select></div><div class="form-group"><label for="filter-bulan">Bulan</label><select id="filter-bulan"><option value="tahunan">Satu Tahun Penuh</option><option value="1">Januari</option><option value="2">Februari</option><option value="3">Maret</option><option value="4">April</option><option value="5">Mei</option><option value="6">Juni</option><option value="7" selected>Juli</option><option value="8">Agustus</option><option value="9">September</option><option value="10">Oktober</option><option value="11">November</option><option value="12">Desember</option></select></div><div class="form-group"><label for="filter-tahun">Tahun</label><select id="filter-tahun"><option>2025</option><option>2024</option></select></div><button class="header-action-btn" style="align-self: flex-end;"><i class="fas fa-filter"></i> Terapkan</button></section>
+
+            <section class="indicator-cards">
+                <div class="indicator-card bor"><h3 >BOR (Bed Occupancy Rate)</h3><p class="indicator-value">82.5%</p><p class="ideal-value">Ideal: 75-85%</p></div>
+                <div class="indicator-card avlos"><h3>AvLOS (Average Length of Stay)</h3><p class="indicator-value">6.2 <span class="unit">hari</span></p><p class="ideal-value">Ideal: 6-9 hari</p></div>
+                <div class="indicator-card bto"><h3>BTO (Bed Turn Over)</h3><p class="indicator-value">4 <span class="unit">kali</span></p><p class="ideal-value">Ideal: 40-50 kali/tahun</p></div>
+                <div class="indicator-card toi"><h3>TOI (Turn Over Interval)</h3><p class="indicator-value">1.5 <span class="unit">hari</span></p><p class="ideal-value">Ideal: 1-3 hari</p></div>
+                <div class="indicator-card gdr"><h3>GDR (Gross Death Rate)</h3><p class="indicator-value">30‰</p><p class="ideal-value">&lt; 45‰</p></div>
+                <div class="indicator-card ndr"><h3>NDR (Net Death Rate)</h3><p class="indicator-value">15‰</p><p class="ideal-value">&lt; 25‰</p></div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+/* 1. SETUP VARIABEL UNTUK KEDUA TEMA */
+:root {
+    --body-bg: linear-gradient(to right top, #d1e4f6, #d8e5f7, #e0e5f7, #e7e5f6, #ece4f5, #f1e3f5, #f5e2f4, #f9e1f3, #fddff0, #ffdeea, #ffdee4, #ffdedf);
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    --text-color: #212529;
+    --text-muted: #6c757d;
+    --header-title-color: #34495e;
+    --table-surface: #ffffff;
+    --table-hover: #f8f9fa;
+    --table-text: #212529;
+    --border-color: #e9ecef;
+    --primary-action-bg: #00796b;
+    --primary-action-shadow: 0 4px 15px 0 rgba(0, 121, 107, 0.3);
+    --card-icon-bg-1: #e0f2f1; --card-icon-color-1: #00796b;
+    --card-icon-bg-2: #e3f2fd; --card-icon-color-2: #1e88e5;
+    --card-icon-bg-3: #e8f5e9; --card-icon-color-3: #43a047;
+    --card-icon-bg-4: #fff3e0; --card-icon-color-4: #fb8c00;
+    --card-icon-bg-5: #fce4ec; --card-icon-color-5: #d81b60;
+}
+.dark-theme {
+    --body-bg: linear-gradient(to right top, #141e30, #1b283e, #21324c, #273c5b, #2d466b);
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    --text-color: #e0e0e0;
+    --text-muted: #9e9e9e;
+    --header-title-color: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --primary-action-bg: #009688;
+}
+
+/* 2. GAYA DASAR */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: var(--body-bg);
+    background-attachment: fixed;
+    margin: 0;
+    color: var(--text-color);
+    transition: background 0.5s ease, color 0.5s ease;
+    animation: fadeInAnimation ease-in 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.glass-effect {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.dashboard-container {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 7. MODAL & FORM */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    padding: 32px;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    animation: slide-down 0.3s ease-out;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    color: var(--text-muted);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
+    color: var(--text-color);
+}
+
+.modal-content h2 {
+    color: var(--header-title-color);
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    background: rgba(255,255,255,0.1);
+    color: var(--text-color);
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.dark-theme .form-group p {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.form-group p {
+    background-color: rgba(236, 240, 241, 0.5);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-action-bg);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.radio-group {
+    display: flex;
+    gap: 24px;
+    background: rgba(0,0,0,0.05);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.dark-theme .radio-group {
+    background: rgba(0,0,0,0.2);
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-action-bg);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* 11. ANIMASI FADE-IN HALAMAN */
+@keyframes fadeInAnimation {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Notification styles */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.notification:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+
+
+/* =================================
+   GAYA UMUM UNTUK TABEL DAN AKSI
+   ================================= */
+
+/* Aturan Umum Tabel */
+.table-container {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--table-text);
+    background: var(--table-surface);
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+thead th {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+    padding: 12px 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+tbody tr:hover {
+    background-color: var(--table-hover);
+}
+td {
+    padding: 16px 20px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+}
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Gaya untuk Tombol Aksi di Admin */
+.btn-edit, .btn-delete {
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 4px;
+    transition: all 0.2s ease;
+}
+.btn-edit:hover {
+    background-color: #ffc107;
+    color: #212529;
+    border-color: #ffc107;
+}
+.btn-delete:hover {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+/* =================================
+   GAYA UNTUK TOMBOL AKSI UTAMA
+   ================================= */
+
+.header-action-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    background-color: var(--primary-action-bg);
+    color: white;
+    box-shadow: var(--primary-action-shadow);
+}
+
+.header-action-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}

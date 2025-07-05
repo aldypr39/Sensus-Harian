@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin - Manajemen Akun</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="css/base.css">
+                        <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-page-body">
+
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-hospital-user"></i>
+                <h2>Panel Admin</h2>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="nav-item active"><a href="admin_akun.html"><i class="fas fa-users-cog"></i> Manajemen Akun</a></li>
+                <li class="nav-item"><a href="admin_ruangan.html"><i class="fas fa-door-open"></i> Manajemen Ruangan</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html" class="back-to-app"><i class="fas fa-arrow-left"></i> Kembali ke Aplikasi</a>
+            </div>
+        </aside>
+
+        <main class="admin-content">
+            <div class="section-header">
+                <h1>Manajemen Akun Login Ruangan</h1>
+                <button id="btn-tambah-akun" class="header-action-btn"><i class="fas fa-plus"></i> Buat Akun Baru</button>
+            </div>
+            
+            <div class="content-body">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama Ruangan</th>
+                                <th>Username Akun</th>
+                                <th style="width: 150px; text-align: center;">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ruang Mawar</td>
+                                <td>ruangmawar</td>
+                                <td style="text-align: center;">
+                                    <button class="btn-edit" title="Edit Password"><i class="fas fa-key"></i></button>
+                                    <button class="btn-delete" title="Hapus Akun"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ruang Melati</td>
+                                <td>ruangmelati</td>
+                                <td style="text-align: center;">
+                                    <button class="btn-edit" title="Edit Password"><i class="fas fa-key"></i></button>
+                                    <button class="btn-delete" title="Hapus Akun"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>ICU</td>
+                                <td>ruangicu</td>
+                                <td style="text-align: center;">
+                                    <button class="btn-edit" title="Edit Password"><i class="fas fa-key"></i></button>
+                                    <button class="btn-delete" title="Hapus Akun"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal-akun" class="modal">
+        <div class="modal-content glass-effect">
+            <span class="close-btn">&times;</span>
+            <h2>Buat Akun Ruangan Baru</h2>
+            <form>
+                <div class="form-group">
+                    <label for="pilih-ruangan">Pilih Ruangan</label>
+                    <select id="pilih-ruangan" name="ruangan_id">
+                        <option value="1">Ruang Mawar</option>
+                        <option value="2">Ruang Melati</option>
+                        <option value="3">ICU</option>
+                        <option value="4">Ruang Anak</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="username-akun">Username Akun</label>
+                    <input type="text" id="username-akun" name="username" placeholder="Contoh: ruangmawar" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-akun">Password</label>
+                    <input type="password" id="password-akun" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="konfirmasi-password">Konfirmasi Password</label>
+                    <input type="password" id="konfirmasi-password" name="password_confirmation" required>
+                </div>
+                <button type="submit" class="btn-submit">Simpan Akun</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js" type="module"></script>
+</body>
+</html>

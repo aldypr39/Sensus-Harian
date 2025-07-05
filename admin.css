@@ -1,0 +1,106 @@
+/* 12. GAYA HALAMAN ADMIN */
+.admin-page-body {
+    background: #e9ecef;
+    color: #212529;
+}
+.dark-theme .admin-page-body {
+    background: #1d2125;
+    color: #e0e0e0;
+}
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Navigasi */
+.admin-sidebar {
+    width: 260px;
+    background-color: #343a40;
+    color: #ced4da;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Mencegah sidebar menyusut */
+}
+.dark-theme .admin-sidebar {
+    background-color: #111315;
+}
+
+.sidebar-header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #495057;
+}
+.sidebar-header i {
+    font-size: 28px;
+    color: var(--primary-action-bg);
+}
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 16px 0;
+    margin: 0;
+    flex-grow: 1;
+}
+.sidebar-nav .nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    color: #ced4da;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+.sidebar-nav .nav-item a:hover {
+    background-color: #495057;
+    color: #ffffff;
+}
+.sidebar-nav .nav-item.active a {
+    background-color: #212529;
+    color: #ffffff;
+    border-left-color: var(--primary-action-bg);
+}
+
+.sidebar-footer {
+    padding: 24px;
+    border-top: 1px solid #495057;
+}
+.sidebar-footer .back-to-app {
+    text-decoration: none;
+    color: #ced4da;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Konten Admin */
+.admin-content {
+    flex-grow: 1;
+    padding: 32px;
+    background-color: var(--body-bg);
+}
+.admin-content .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+.admin-content h1 {
+    margin: 0;
+    color: var(--header-title-color);
+}
+.admin-content .table-container {
+    border-radius: 8px; /* Sudut lebih tajam untuk tampilan admin */
+}

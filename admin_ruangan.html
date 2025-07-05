@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin - Manajemen Ruangan</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="css/base.css">
+                    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-page-body">
+
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-hospital-user"></i>
+                <h2>Panel Admin</h2>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="nav-item"><a href="admin_akun.html"><i class="fas fa-users-cog"></i> Manajemen Akun</a></li>
+                <li class="nav-item active"><a href="admin_ruangan.html"><i class="fas fa-door-open"></i> Manajemen Ruangan</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html" class="back-to-app"><i class="fas fa-arrow-left"></i> Kembali ke Aplikasi</a>
+            </div>
+        </aside>
+
+        <main class="admin-content">
+            <div class="section-header">
+                <h1>Manajemen Ruangan Perawatan</h1>
+                <button id="btn-tambah-ruangan" class="header-action-btn"><i class="fas fa-plus"></i> Tambah Ruangan Baru</button>
+            </div>
+            
+            <div class="content-body">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama Ruangan</th>
+                                <th>Jumlah Tempat Tidur</th>
+                                <th style="width: 150px; text-align: center;">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ruang Mawar</td>
+                                <td>20</td>
+                                <td style="text-align: center;">
+                                    <button class="btn-edit" title="Edit Ruangan"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="btn-delete" title="Hapus Ruangan"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ruang Melati</td>
+                                <td>15</td>
+                                <td style="text-align: center;">
+                                    <button class="btn-edit" title="Edit Ruangan"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="btn-delete" title="Hapus Ruangan"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>ICU</td>
+                                <td>10</td>
+                                <td style="text-align: center;">
+                                    <button class="btn-edit" title="Edit Ruangan"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="btn-delete" title="Hapus Ruangan"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal-ruangan" class="modal">
+        <div class="modal-content glass-effect">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-ruangan-title">Tambah Ruangan Baru</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nama-ruangan">Nama Ruangan</label>
+                    <input type="text" id="nama-ruangan" name="nama_ruangan" placeholder="Contoh: Ruang Anggrek" required>
+                    <input type="number" id="jumlah-tt" name="jumlah_tt" placeholder="Contoh: 20" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="jumlah-tt">Jumlah Tempat Tidur</label>
+                    <input type="number" id="jumlah-tt" name="jumlah_tt" placeholder="Contoh: 20" min="1" required  >
+                </div>
+                <button type="submit" class="btn-submit">Simpan Ruangan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js" type="module"></script>
+</body>
+</html>
